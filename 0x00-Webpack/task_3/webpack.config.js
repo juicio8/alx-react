@@ -28,6 +28,8 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, "public"),
     },
+    contentBase: "./public",
+    port: 8564,
   },
   module: {
     rules: [
