@@ -17,5 +17,5 @@ $(document).ready(() => {
     console.log(count);
     $("#count").text(`${count} clicks on the button`);
   }
-  $("button").click(_.debounce(updateCounter, 250));
+  $("button").click(_.debounce(updateCounter, 500));
 });
