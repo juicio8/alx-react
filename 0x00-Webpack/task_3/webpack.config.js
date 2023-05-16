@@ -1,8 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
-  mode: "production",
+  mode: "development",
   performance: {
     hints: false,
   },
@@ -12,21 +11,21 @@ module.exports = {
       maxSize: 250000,
     },
   },
-  entry: path.resolve(__dirname, "js/dashboard_main.js"),
+
+  entry: {
+    header: path.resolve(__dirname, "modules/header/header.js"),
+    body: path.resolve(__dirname, "modules/body/body.js"),
+    footer: path.resolve(__dirname, "modules/footer/footer.js"),
+  },
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "bundle.js",
-    assetModuleFilename: "assets/[name][ext]",
+    filename: "[name].js",
+    // assetModuleFilename: "assets/[name][ext]",
   },
   devServer: {
     static: {
       directory: path.resolve(__dirname, "public"),
     },
-    port: 8564,
-    hot: true,
-    compress: true,
-    open: true,
-    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -35,8 +34,23 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "holberton-logo.[ext]",
+              outputPath: "assets/",
+            },
+          },
+          {
+            loader: "image-webpack-loader",
+            // options: {
+            //   name: "holberton-logo.[ext]",
+            //   outputPath: "assets/",
+            // },
+          },
+        ],
       },
     ],
   },
