@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -17,7 +16,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
-    assetModuleFilename: "assets/[name][ext]",
+    // assetModuleFilename: "assets/[name][ext]",
   },
   module: {
     rules: [
@@ -26,19 +25,24 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          //   {
+          //     loader: "file-loader",
+          //     options: {
+          //       name: "holberton-logo.[ext]",
+          //       outputPath: "assets/",
+          //     },
+          //   },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              name: "holberton-logo.[ext]",
+              outputPath: "assets/",
+            },
+          },
+        ],
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-    }),
-    // new CompressionPlugin({
-    //   exclude: /\.js$/,
-    //   include: /\.(png|jpg|jpeg)$/,
-    //   filename: "assets/[name][ext]",
-    // }),
-  ],
 };
