@@ -1,0 +1,45 @@
+:root {
+  --primary: #e0354b;
+  --secondary: #fff;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.App {
+  padding: 0 1rem;
+}
+.App-header {
+  display: flex;
+  align-items: center;
+  /* margin: 0 1rem; */
+  padding: 0.5rem;
+  border-bottom: 3px solid var(--primary);
+}
+.App-body {
+  margin-top: 4rem;
+  padding-left: 4rem;
+  height: 50vh;
+}
+.App-footer {
+  text-align: center;
+  font-style: italic;
+  padding: 1.2rem 0;
+  border-top: 3px solid var(--primary);
+}
+
+.App-header img {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.App-header h1 {
+  color: var(--primary);
+}
