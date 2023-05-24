@@ -1,0 +1,18 @@
+.Notifications {
+  position: absolute;
+  background-color: white;
+  right: 20px;
+  padding: 1rem 1rem;
+  min-width: 400px;
+  border: 1.5px dashed var(--primary);
+}
+.Notifications ul {
+  margin-top: 1rem;
+  margin-left: 2.5rem;
+}
+.Notifications [data-notification-type="default"] {
+  color: blue;
+}
+.Notifications [data-notification-type="urgent"] {
+  color: red;
+}

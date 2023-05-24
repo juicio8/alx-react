@@ -1,0 +1,24 @@
+:root {
+  --primary: #e0354b;
+  --secondary: #fff;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.App {
+  padding: 0 1rem;
+}
+
+.App-body {
+  margin-top: 4rem;
+  padding-left: 4rem;
+  height: 50vh;
+}
