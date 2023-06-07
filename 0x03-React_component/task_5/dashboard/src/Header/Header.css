@@ -1,0 +1,15 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  /* margin: 0 1rem; */
+  padding: 0.5rem;
+  border-bottom: 3px solid var(--primary);
+}
+.App-header img {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.App-header h1 {
+  color: var(--primary);
+}
