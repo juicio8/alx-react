@@ -1,6 +1,6 @@
 import { Map } from "immutable";
 
-function accessImmutableObject(object, array) {
+export default function accessImmutableObject(object, array) {
   if (!array.length) {
     return undefined;
   }
