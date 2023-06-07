@@ -1,19 +1,9 @@
 import { Map } from "immutable";
 
 export default function accessImmutableObject(object, array) {
-  if (!array.length) {
-    return undefined;
-  }
-  let obj = Map(object);
-  for (let i = 0; i < array.length; i++) {
-    if (i === 0) {
-      obj = obj.get(array[i]);
-    } else {
-      obj = obj[array[i]];
-    }
-  }
-  return obj;
-  //   return obj[array[1]];
+  const immutableObject = Map(object);
+  const value = immutableObject.getIn(array);
+  return value;
 }
 // console.log(
 //   accessImmutableObject(
@@ -25,6 +15,6 @@ export default function accessImmutableObject(object, array) {
 //         last: "Salva",
 //       },
 //     },
-//     ["name", "first", "ss"]
+//     ["name", "first"]
 //   )
 // );
